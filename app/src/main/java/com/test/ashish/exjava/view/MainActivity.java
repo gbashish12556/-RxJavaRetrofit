@@ -121,6 +121,7 @@ public class MainActivity extends AppCompatActivity {
          * This will be executed when app is installed for the first time
          * or data is cleared from settings
          * */
+//        Log.d("apiKey",PrefUtils.getApiKey(this));
         if (TextUtils.isEmpty(PrefUtils.getApiKey(this))) {
             registerUser();
         } else {
@@ -147,6 +148,7 @@ public class MainActivity extends AppCompatActivity {
                             @Override
                             public void onSuccess(User user) {
                                 // Storing user API Key in preferences
+                                Log.d("Registered","Registered");
                                 PrefUtils.storeApiKey(getApplicationContext(), user.getApiKey());
 
                                 Toast.makeText(getApplicationContext(),
